@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 
 import { IServiceBroker, ServiceCatalog } from "../../shared/ServiceCatalog";
-import { Card } from "../Card";
+import { Card, CardContainer } from "../Card";
 
 interface IServiceBrokerListProps {
   brokers: IServiceBroker[];
@@ -13,7 +13,7 @@ export const ServiceBrokerList = (props: IServiceBrokerListProps) => {
   return (
     <div className="service-broker-list">
       <h3>My Brokers</h3>
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
+      <CardContainer>
         {brokers.map(broker => {
           const card = (
             <Card
@@ -26,7 +26,7 @@ export const ServiceBrokerList = (props: IServiceBrokerListProps) => {
           );
           return card;
         })}
-      </div>
+      </CardContainer>
     </div>
   );
 };
